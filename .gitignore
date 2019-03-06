@@ -58,7 +58,3 @@ typings/
 .env
 
 .DS_Store
-
-#source folder
-dist-stable
-dist

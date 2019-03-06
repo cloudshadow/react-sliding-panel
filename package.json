@@ -1,25 +1,18 @@
 {
-  "name": "react-redux-immutable-starter-kit",
-  "version": "1.0.0",
-  "description": "starter kit for react v16",
+  "name": "react-sliding-panel",
+  "version": "0.0.1",
+  "description": "react sliding panel",
   "engines": {
     "npm": ">=3"
   },
-  "scripts": {
-    "start:dev": "webpack-dev-server --color --config ./webpack.config.dev.js",
-    "start:prod": "npm run clean-dist && webpack --config ./webpack.config.prod.js",
-    "start:stable": "npm run clean-dist-stable && webpack --config ./webpack.config.stable.js",
-    "lint": "esw webpack.config.* src tools --color",
-    "lint:watch": "npm run lint -- --watch",
-    "clean-dist": "npm run remove-dist && mkdir dist",
-    "clean-dist-stable": "npm run remove-dist-stable && mkdir dist-stable",
-    "remove-dist": "rimraf ./dist",
-    "remove-dist-stable": "rimraf ./dist-stable",
-    "generate": "babel-node tools/generateComponent/generateComponent.js",
-    "upload": "babel-node tools/upload/upload.js"
-  },
   "author": "CloudShadow.Me",
   "license": "MIT",
+  "main": "./dist/react-responsive.js",
+  "scripts": {
+    "start:prod": "npm run clean-dist && webpack --config ./webpack.config.js",
+    "clean-dist": "npm run remove-dist && mkdir dist",
+    "remove-dist": "rimraf ./dist"
+  },
   "dependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
@@ -69,14 +62,8 @@
   },
   "keywords": [
     "react",
-    "reactjs",
-    "immutable",
-    "immutable.js",
-    "react-router",
-    "webpack",
-    "redux",
-    "boilerplate",
-    "starter",
-    "kit"
+    "sliding",
+    "panel",
+    "sliding panel"
   ]
 }
