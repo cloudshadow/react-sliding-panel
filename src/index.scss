@@ -1,0 +1,140 @@
+$panelHight: 70vh;
+$panelGlass: 100vh - $panelHight;
+$panelHeaderHight: 5vh;
+$panelFooterHight: 7vh;
+$panelBodyWithFooterHight: $panelHight - $panelGlass - $panelHeaderHight - $panelFooterHight;
+$panelBodyWithoutFooterHight: $panelHight - $panelGlass - $panelHeaderHight;
+$sidePanelHight: 100vh;
+$sidePanelWidth: 70vw;
+$sidePanelGlassWidth: 100vw - $sidePanelWidth;
+
+.cloud-sliding-panel-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15000;
+  background-color: rgba(0,0,0,.3);
+  will-change: transform;
+  .panel-glass{
+    width: 100vw;
+    height: $panelGlass;
+    position: fixed;
+    z-index: 16000;
+    top: 0;
+    left: 0;
+  }
+  .panel-glass-side{
+    width: $sidePanelGlassWidth;
+    height: 100vh;
+    position: fixed;
+    z-index: 16000;
+    top: 0;
+    left: $sidePanelWidth;
+  }
+  .panel-bottom {
+    width: 100vw;
+    height: $panelHight;
+    position: fixed;
+    z-index: 16000;
+    background-color: #fff;
+    bottom: -$panelHight;
+  }
+  .panel-side {
+    width: $sidePanelWidth;
+    height: 100vh;
+    position: fixed;
+    z-index: 16000;
+    background-color: #fff;
+    display: inline-block;
+  }
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadeIn {
+  animation-fill-mode: both;
+  animation-duration: .5;
+  animation-name: fadeIn;
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+    opacity: 0;
+	}
+}
+.fadeOut {
+  animation-fill-mode: both;
+  animation-duration: .5s;
+  animation-name: fadeOut;
+}
+@keyframes bottomPanelShow {
+	0% {
+		opacity: 0;
+		transform: translateY(0vh);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(-$panelHight);
+	}
+}
+.bottomPanelShow {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: bottomPanelShow;
+}
+@keyframes bottomPanelHide {
+	0% {
+		opacity: 1;
+		transform: translateY(-$panelHight);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(0vh);
+	}
+}
+.bottomPanelHide {
+  animation-fill-mode: both;
+  animation-duration: .5s;
+  animation-name: bottomPanelHide;
+}
+@keyframes sidePanelShow {
+	0% {
+		opacity: 0;
+		transform: translateX(-$sidePanelWidth);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0vw);
+	}
+}
+.sidePanelShow {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: sidePanelShow;
+}
+
+@keyframes sidePanelHide {
+	0% {
+		opacity: 0;
+		transform: translateX(0vw);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-$sidePanelWidth);
+	}
+}
+.sidePanelHide {
+  animation-fill-mode: both;
+  animation-duration: .5s;
+  animation-name: sidePanelHide;
+}
