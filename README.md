@@ -35,7 +35,6 @@ const DemoComponent = React.memo((props) => {
         type={type}
         isOpen={isOpen}
         closeFunc={() => setIsOpen(false)}
-        hasButton={true}
       >
         <div>
           Your components here
