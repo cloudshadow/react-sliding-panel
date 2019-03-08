@@ -10,19 +10,40 @@
 npm install react-sliding-panel --save
 ```
 
+## Demo
+  ![Demo](https://user-images.githubusercontent.com/1182967/54028168-16f24780-41df-11e9-833b-3ea2d1784e0b.gif)
+
 ## Example
 
 ```javascript
+import React, { useState } from 'react';
 import SlidingPanel from 'react-sliding-panel';
 
-const [isOpen, setIsOpen] = useState(false);
-<SlidingPanel
-  type="side"
-  isOpen={isOpen}
-  closeFunc={() => setIsOpen(false)}
->
-  <YourComponent />
-</SlidingPanel>
+const DemoComponent = React.memo((props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [type, setType] = useState('bottom');
+  return (
+    <>
+      <div>React Sliding Panel Demo</div>
+      <div>
+        <button className="btn btn-primary" onClick={() => {setType('bottom'); setIsOpen(true);}}>Bottom</button>
+      </div>
+      <div>
+        <button className="btn btn-primary" onClick={() => {setType('side'); setIsOpen(true);}}>left</button>
+      </div>
+      <SlidingPanel
+        type={type}
+        isOpen={isOpen}
+        closeFunc={() => setIsOpen(false)}
+        hasButton={true}
+      >
+        <div>
+          Your components here
+        </div>
+      </SlidingPanel>
+    </>
+  );
+});
 
 ```
 
@@ -46,7 +67,7 @@ Set sliding panel close function
 
 
 ## Changelog
-- 0.0.1
+- 0.0.3
 
 ## License
 

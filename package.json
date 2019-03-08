@@ -1,6 +1,6 @@
 {
   "name": "react-sliding-panel",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "react sliding panel",
   "engines": {
     "npm": ">=3"
