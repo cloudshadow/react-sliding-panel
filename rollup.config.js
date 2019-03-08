@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+// import scss from 'rollup-plugin-scss';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
@@ -11,8 +12,6 @@ export default {
     },
     external: [
         'react',
-        'react-dom',
-        'react-modal',
         'prop-types',
     ],
     plugins: [
@@ -21,8 +20,9 @@ export default {
         }),
         resolve(),
         commonjs(),
-        postcss({
-            extract: true
-        }),
+        // scss({
+        //   output: true
+        // }),
+        postcss(),
     ],
 };
