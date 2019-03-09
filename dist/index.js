@@ -62,9 +62,7 @@ var SlidingPanel = function SlidingPanel(props) {
 };
 
 SlidingPanel.propTypes = {
-  title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  hasButton: PropTypes.bool.isRequired,
   isOpen: PropTypes.bool.isRequired,
   closeFunc: PropTypes.func.isRequired,
   children: PropTypes.element
